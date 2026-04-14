@@ -4,6 +4,7 @@ import re
 import os
 
 def check_code(code):
+    # Remove lines that start with # (comments)
     code_no_comments = "\n".join([line for line in code.split("\n") if not line.strip().startswith("#")])
     # Also strip out spaces for easier regex searches on basic syntax
     compressed_code = code_no_comments.replace(" ", "")
